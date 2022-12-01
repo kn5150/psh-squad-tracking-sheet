@@ -1,0 +1,17 @@
+=TO_DATE(IFS(
+D3="","",
+D3="Weekly",D2-7,
+D3="Bi-Weekly",D2-14,
+AND(D3="Semi-Monthly 5/20",DAY(D2)=5),EDATE(D2,-1)+15,
+AND(D3="Semi-Monthly 5/20",DAY(D2)=20),D2-15,
+AND(D3="Semi-Monthly 6/21",DAY(D2)=6),EDATE(D2,-1)+15,
+AND(D3="Semi-Monthly 6/21",DAY(D2)=21),D2-15,
+AND(D3="Semi-Monthly 7/22",DAY(D2)=7),EDATE(D2,-1)+15,
+AND(D3="Semi-Monthly 7/22",DAY(D2)=22),D2-15,
+AND(D3="Semi-Monthly 1/15",DAY(D2)=1),EDATE(D2,-1)+14,
+AND(D3="Semi-Monthly 1/15",DAY(D2)=15),D2-14,
+AND(D3="Semi-Monthly 15/EOM",DAY(D2)=15),EOMONTH(EDATE(D2,-1),0)),
+AND(D3="Semi-Monthly 15/EOM",DAY(D2)=28),D2-13,
+AND(D3="Semi-Monthly 15/EOM",DAY(D2)=30),D2-15,
+AND(D3="Semi-Monthly 15/EOM",DAY(D2)=31),D2-16
+))
